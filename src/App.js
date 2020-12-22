@@ -1,10 +1,10 @@
 import React from 'react'
+import Details from './components/details/Details'
 
 function App() {
     return (
         <div>
-            <h1>Hello App</h1>
-            Duniya
+            <Details /> 
         </div>
     )
 }
