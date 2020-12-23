@@ -1,0 +1,21 @@
+// Reducer => Its a function that takes in the old state, & an action and returns a new State
+const contextReducer = (state, action) => {
+    console.log(action);
+
+    switch (action.type) {
+        case "DELETE_TRANSACTION":
+            return (
+                state.filter(t => t.id !== action.payload)
+            )
+            
+        case "ADD_TRANSACTION":
+            return (
+                [action.payload, ...state]
+            )
+
+        default:
+            return state;
+    }
+}
+
+export default contextReducer
