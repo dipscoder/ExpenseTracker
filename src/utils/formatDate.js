@@ -1,7 +1,7 @@
 const formateDate = (date) => {
-    console.log(date);
+    // console.log(date);
     let d = new Date(date)
-    console.log("d->",d);
+    // console.log("d->",d);
     let month = `${d.getMonth() + 1}`
     let dayNum = `${d.getDate()}`
     const year = d.getFullYear()
