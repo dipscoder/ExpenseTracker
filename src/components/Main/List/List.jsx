@@ -9,7 +9,7 @@ function List() {
     const classes = useStyles()
 
     const { deleteTransaction } = useContext(ExpenseTrackerContext)
-    console.log(deleteTransaction);
+    // console.log(deleteTransaction);
 
     const transactions = [
         {id : 1, type : "Income", category : "Salary", amount : 50, date :"Tue Dec 22 2020" },
