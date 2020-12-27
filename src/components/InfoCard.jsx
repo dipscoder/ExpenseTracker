@@ -1,8 +1,9 @@
 import React from 'react'
 
+const isIncome = Math.round(Math.random())
+
 function InfoCard() {
     // 0 - False , 1 - True
-    const isIncome = Math.round(Math.random())
     
     return (
         <div style={{ textAlign: 'centre', padding: '0 10%'}} >
