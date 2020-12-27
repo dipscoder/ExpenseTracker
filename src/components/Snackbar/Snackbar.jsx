@@ -13,7 +13,7 @@ function CustiomizedSnackbar({ open, setOpen }) {
         setOpen(false)
     }
     return (
-        <div className="root">
+        <div className={classes.root}>
             <Snackbar  
                 anchorOrigin={{ vertical: 'top' , horizontal: 'right' }}
                 open={open}
