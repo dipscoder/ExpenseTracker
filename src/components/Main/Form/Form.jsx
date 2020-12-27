@@ -7,6 +7,7 @@ import { ExpenseTrackerContext } from "../../../context/context"
 import { incomeCategories, expenseCategories } from "../../../constants/categories";
 import formatDate from "../../../utils/formatDate";
 import useStyles from './styles'
+import CustiomizedSnackbar from '../../Snackbar/Snackbar';
 
 const initialState = {
   category: "",
@@ -20,6 +21,7 @@ function Form() {
   const { addTransaction } = useContext(ExpenseTrackerContext);
   const [formData, setFormData] = useState(initialState);
   const { segment } = useSpeechContext();
+  const [open, setOpen] = useState(false)
   // console.log(formData);
 
   const submitTransaction = () => {
@@ -32,6 +34,7 @@ function Form() {
       id: uuidv4(),
     };
     addTransaction(transaction);
+    setOpen(true);
     setFormData(initialState);
   };
 
@@ -98,6 +101,7 @@ function Form() {
     formData.type === "Income" ? incomeCategories : expenseCategories;
   return (
     <Grid container spacing={2}>
+      <CustiomizedSnackbar open={open} setOpen={setOpen} />
       <Grid item xs={12}>
         <Typography variant="subtitle2" align="center" gutterBottom>
           {segment && segment.words.map((w) => w.value).join(" ")}
